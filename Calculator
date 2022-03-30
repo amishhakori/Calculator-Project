@@ -1,0 +1,235 @@
+<html>
+
+  <head>
+
+    <meta charset="utf-8">
+
+    <title> calculadora </title>
+
+    <style>
+
+      *{
+
+        margin: 0;
+
+        padding: 0;
+
+      }
+
+      .backgroud{
+
+        background-image: linear-gradient(160deg,black,pink);
+
+        height: 100%;
+
+        color: #ffffff;
+
+        font-family: Times New Roman;
+
+        text-align: center;
+
+      }
+
+      .calculator{
+
+        position: absolute;
+
+        background-color: rgba(0,0,0,0.8);
+
+        top: 50%;
+
+        left: 50%;
+
+        transform: translate(-50%,-50%);
+
+        border-radius: 18px;
+
+        padding: 18px;
+
+      }
+
+      .btn{
+
+        
+
+        width: 50px;
+
+        height: 50px;
+
+        background-color: rgb(31,31,31);
+
+        margin: 1px;
+
+        font-size: 27px;
+
+        cursor: pointer;
+
+        border: none;
+
+        color: #ffffff;
+
+        border-radius: 5px;
+
+      }
+
+      .btn:hover{
+
+        background-color: black;
+
+      }
+
+      #result{
+
+        color: black;
+
+        background-color: #ffffff;
+
+        width: 200px;
+
+        height: 40px;
+
+        margin: 6px;
+
+        font-size: 27px;
+
+        text-align: right;
+
+        padding: 5px;
+
+        border-radius: 5px;
+
+        
+
+      }
+
+    </style>
+
+  </head>
+
+  
+
+  <body>
+
+    <div class="backgroud">
+
+      <h1> PROJETO DE CALCULADORA</h1>
+
+      <div class="calculator">
+
+        <h1> Calculator </h1>
+
+        <p id="result"></p>
+
+        <table>
+
+          <tr>
+
+           <td><button class="btn" onclick="clean ()">C</button></td>
+
+           <td><button class="btn"onclick="back()"><</button></td>
+
+           <td><button class="btn"onclick="insert('/')">/</button></td>
+
+           <td><button class="btn"onclick="insert('*')">x</button></td>
+
+          </tr>
+
+          <tr>
+
+           <td><button class="btn"onclick="insert('7')">7</button></td>
+
+           <td><button class="btn"onclick="insert('8')">8</button></td>
+
+           <td><button class="btn"onclick="insert('9')">9</button></td>
+
+           <td><button class="btn"onclick="insert('-')">-</button></td>
+
+          </tr>
+
+          <tr>
+
+           <td><button class="btn"onclick="insert('4')">4</button></td>
+
+           <td><button class="btn"onclick="insert('5')">5</button></td>
+
+           <td><button class="btn"onclick="insert('6')">6</button></td>
+
+           <td><button class="btn"onclick="insert('+')">+</button></td>
+
+          </tr>
+
+          <tr>
+
+           <td><button class="btn"onclick="insert('1')">1</button></td>
+
+           <td><button class="btn"onclick="insert('2')">2</button></td>
+
+           <td><button class="btn"onclick="insert('3')">3</button></td>
+
+           <td rowspan="2"><button class="btn" style="height:104px" onclick="calc()">=</button></td> 
+
+          </tr>
+
+          <tr>
+
+           <td colspan="2"><button class="btn" style="width:104px" onclick="insert('0')">0</button></td>
+
+           <td><button class="btn" onclick="insert('.')">.</button></td>
+
+          </tr>
+
+        </table>
+
+      </div>
+
+    </div>
+
+    <script>
+
+           function insert(num)
+
+           {
+
+          var numb = document.getElementById('result').innerHTML;
+
+          document.getElementById('result').innerHTML = numb + num;
+
+           }
+
+           function clean()
+
+           {
+
+            document.getElementById('result').innerHTML = "";
+
+           }
+
+           function back()
+
+           {
+
+             var resu = document.getElementById('result').innerHTML;
+
+             document.getElementById('result').innerHTML = resu.substring(0,resu.length -1)
+
+           }
+
+           function calc()
+
+           {
+
+            var resu = document.getElementById("result").innerHTML; 
+
+            if (resu) {
+
+           document.getElementById('result').innerHTML = eval(resu);
+
+             }
+
+           }
+
+    </script>
+
+  </body>
+
+</html>
